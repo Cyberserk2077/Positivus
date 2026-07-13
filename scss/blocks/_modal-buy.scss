@@ -1,0 +1,122 @@
+@use '../helpers' as *;
+
+.modal-buy {
+
+  @include mobile-above {
+    width: min(800px, 80%);
+  }
+
+  &__content {
+    max-width: 448px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    color: var(--color-light);
+
+    @include mobile-above {
+      margin-bottom: 56px;
+    }
+
+    @include mobile {
+      margin-bottom: 36px;
+    }
+  }
+
+  &__form {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  &__label {
+    margin-bottom: 16px;
+  }
+
+  &__input {
+    display: inline-block;
+    width: 100%;
+    color: var(--color-light);
+    background-color: transparent;
+    border-radius: var(--border-radius-small);
+    border: 1px solid var(--color-light);
+
+    @include hover {
+      border: 1px solid var(--color-accent);
+    }
+
+    @include mobile-above {
+      padding: 20px 24px;
+      font-size: 16px;
+    }
+
+    @include mobile {
+      padding: 14px 18px;
+      font-size: 14px;
+    }
+
+    &::-webkit-input-placeholder {
+      color: var(--color-gray-alt);
+      text-transform: uppercase;
+    }
+
+    &::-moz-placeholder {
+      color: var(--color-gray-alt);
+      text-transform: uppercase;
+    }
+
+    &:-ms-input-placeholder {
+      color: var(--color-gray-alt);
+      text-transform: uppercase;
+    }
+
+    &::-ms-input-placeholder {
+      color: var(--color-gray-alt);
+      text-transform: uppercase;
+    }
+
+    &::placeholder {
+      color: var(--color-gray-alt);
+      text-transform: uppercase;
+    }
+  }
+
+  &__submit {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-dark);
+    border-radius: var(--border-radius-small);
+    background-color: var(--color-accent);
+    -webkit-transition-duration: var(--transition-duration);
+    transition-duration: var(--transition-duration);
+
+    @include mobile-above {
+      margin-top: 56px;
+      padding: 20px;
+    }
+
+    @include mobile {
+      margin-top: 36px;
+      padding: 14px;
+    }
+
+    @include hover {
+      background-color: var(--color-light);
+    }
+  }
+}

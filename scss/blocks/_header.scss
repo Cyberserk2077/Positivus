@@ -1,0 +1,121 @@
+@use '../helpers' as *;
+
+.header {
+  padding-top: fluid(60, 30);
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: to-rem(40);
+
+    @include tablet {
+      column-gap: to-rem(30);
+    }
+  }
+
+  &__logo {
+    z-index: 11;
+
+    @include tablet {
+      max-width: to-rem(120);
+    }
+
+    @include mobile {
+      max-width: to-rem(144);
+    }
+  }
+
+  &__overlay {
+    @include mobile-above {
+      display: contents;
+    }
+
+    @include mobile {
+      position: fixed;
+      inset: 0;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      row-gap: 3rem;
+      padding: 1rem;
+      background-color: var(--color-light);
+      transition-duration: var(--transition-duration);
+      will-change: translate;
+
+      &:not(.is-active) {
+        @include hide;
+        translate: 100%;
+      }
+    }
+  }
+
+  &__menu {
+    margin-left: auto;
+    font-size: to-rem(20);
+
+    @include desktop {
+      font-size: to-rem(18);
+    }
+
+    @include tablet {
+      font-size: to-rem(16);
+    }
+
+    @include mobile {
+      margin: auto;
+      font-size: to-rem(20);
+    }
+
+    &-list {
+      display: flex;
+      align-items: center;
+      gap: to-rem(40);
+
+      @include desktop {
+        gap: to-rem(20);
+      }
+
+      @include mobile {
+        flex-direction: column;
+      }
+    }
+
+    &-link {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      height: to-rem(48);
+      white-space: nowrap;
+
+      @include hover {
+
+        &::after {
+          width: 100%;
+        }
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        translate: -50%;
+        width: 0;
+        height: to-rem(2);
+        background-color: currentColor;
+        transition-duration: inherit;
+      }
+    }
+  }
+
+  &__button {
+
+    @include tablet {
+      height: to-rem(48);
+      padding-inline: to-rem(18);
+      font-size: to-rem(16);
+    }
+  }
+}

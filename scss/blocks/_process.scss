@@ -1,0 +1,116 @@
+@use '../helpers' as *;
+
+.process {
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(30, 20);
+    counter-reset: custom-counter;
+    list-style: none;
+  }
+
+  &__item {
+    --counterContent: counter(custom-counter);
+
+    counter-increment: custom-counter;
+
+    &:nth(-n + 9) {
+      --counterContent: '0' counter(custom-counter);
+    }
+  }
+
+  &__accordion {
+    --indicatorVerticalRotate: 90deg;
+
+    padding: to-rem(40) to-rem(60);
+    border-radius: var(--border-radius-large);
+    border: var(--border);
+    box-shadow: var(--shadow);
+    background-color: var(--color-gray);
+    transition-duration: var(--transition-duration);
+
+    @include hover {
+      background-color: var(--color-accent);
+    }
+
+    @include mobile {
+      padding: to-rem(30);
+    }
+
+    &[open] {
+      --indicatorVerticalRotate: 0deg;
+
+      background-color: var(--color-accent);
+    }
+
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: fluid(50, 28);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    &-title {
+      display: flex;
+      align-items: center;
+      column-gap: to-rem(25);
+
+      @include fluid-text(30, 18);
+
+      @include mobile {
+        column-gap: to-rem(33);
+      }
+
+      &::before {
+        content: var(--counterContent);
+        font-size: 2em;
+
+        @include mobile {
+          font-size: to-rem(30);
+        }
+      }
+    }
+
+    &-indicator {
+      --indicatorSize: #{to-rem(58)};
+
+      @include flex-center;
+      @include square(var(--indicatorSize));
+
+      position: relative;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background-color: var(--color-gray);
+      border: var(--border);
+
+      @include mobile {
+        --indicatorSize: #{to-rem(30)};
+      }
+
+      &::before,
+      &::after {
+        @include abs-center;
+
+        content: '';
+        // 18 / 58 * 100 (ширина черточки / на размер кружка ; 100) = размер в %
+        width: 45%;
+        height: 10%;
+        background-color: var(--color-dark);
+      }
+
+      &::after {
+        rotate: var(--indicatorVerticalRotate);
+        transition-duration: var(--transition-duration);
+      }
+    }
+
+    &-body {
+      margin-top: to-rem(30);
+      padding-top: to-rem(30);
+      border-top: var(--border);
+    }
+  }
+}

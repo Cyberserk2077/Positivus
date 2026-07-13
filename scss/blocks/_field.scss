@@ -1,0 +1,59 @@
+@use '../helpers' as *;
+
+.field {
+  --fieldInputHeight: var(--input-height);
+  --fieldInputTextColor: var(--color-dark);
+  --fieldInputBgColor: var(--color-light);
+  --fieldInputBorderColor: var(--color-dark);
+  --fieldInputPlaceholderColor: var(--color-gray-alt);
+  --fieldInputHoverBgColor: var(--color-accent);
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  row-gap: to-rem(5);
+
+  @include mobile {
+    row-gap: to-rem(10);
+  }
+
+  &--big-height {
+    --fieldInputHeight: var(--button-height);
+  }
+
+  &--dark-bg {
+    --fieldInputBgColor: var(--color-dark-alt);
+    --fieldInputBorderColor: var(--color-light);
+    --fieldInputPlaceholderColor: var(--color-light);
+    --fieldInputTextColor: var(--color-accent);
+    --fieldInputHoverBgColor: var(--color-dark);
+  }
+
+  &__label {
+    @include fluid-text(16, 14);
+  }
+
+  &__input {
+    width: 100%;
+    height: var(--fieldInputHeight);
+    padding-inline: fluid(30, 20);
+    border-radius: var(--border-radius);
+    color: var(--fieldInputTextColor);
+    background-color: var(--fieldInputBgColor);
+    border: to-rem(1) solid var(--fieldInputBorderColor);
+
+    @include hover {
+      background-color: var(--fieldInputHoverBgColor);
+    }
+
+    &::placeholder {
+      color: var(--fieldInputPlaceholderColor);
+    }
+
+    &--textarea {
+      height: fluid(190, 132);
+      padding-block: to-rem(18);
+      resize: none;
+    }
+  }
+}

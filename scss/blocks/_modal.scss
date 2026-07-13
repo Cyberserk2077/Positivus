@@ -1,0 +1,73 @@
+@use '../helpers' as *;
+
+.modal {
+  --transition-duration: 0.2s;
+
+  position: fixed;
+  inset: 0;
+  z-index: var(--layer-3);
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: auto;
+  background: var(--overlay);
+  transition-duration: var(--transition-duration);
+
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &::before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+
+  &__window {
+    position: relative;
+    display: none;
+    margin-block: 50px;
+    border-radius: var(--border-radius);
+    vertical-align: middle;
+    background-color: var(--color-dark);
+    box-shadow: 0 0 20px var(--color-dark-alt);
+
+    &.is-open {
+      display: inline-block;
+    }
+
+    @include mobile-above {
+      padding: 100px 50px;
+    }
+
+    @include mobile {
+      padding: 80px 30px;
+      width: 90%;
+    }
+  }
+
+  &__close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    width: 24px;
+    height: 24px;
+    color: var(--color-light);
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+
+  &__close-icon {
+    stroke: currentColor;
+  }
+}
+
+

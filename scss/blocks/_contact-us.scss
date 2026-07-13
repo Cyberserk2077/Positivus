@@ -1,0 +1,71 @@
+@use '../helpers' as *;
+
+.contact-us {
+  position: relative;
+  overflow-x: hidden;
+
+  @include tablet-above {
+
+    &::after {
+      --contactUsImageOffsetY: #{to-rem(62)};
+
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      translate: -50% -50%;
+      height: calc(100% - var(--contactUsImageOffsetY) * 2);
+      aspect-ratio: 1;
+      background: url('../../images/contact-us-bg.svg') center / contain no-repeat;
+    }
+  }
+
+  @include mobile-above {
+    padding: to-rem(60) to-rem(100) to-rem(80);
+    border-radius: var(--border-radius-large);
+    background-color: var(--color-gray);
+  }
+
+  &__form,
+  &__body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__request-types,
+  &__body {
+
+    @include mobile {
+      background-color: var(--color-gray);
+    }
+  }
+
+  &__form {
+
+    @include tablet-above {
+      max-width: to-rem(556);
+    }
+
+    @include mobile-above {
+      row-gap: to-rem(40);
+    }
+  }
+
+  &__request-types {
+
+    @include mobile {
+      padding: to-rem(40) to-rem(52) to-rem(36);
+      border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
+    }
+  }
+
+  &__body {
+    row-gap: fluid(25, 20);
+
+    @include mobile {
+      margin-bottom: to-rem(30);
+      padding: to-rem(10) to-rem(30) to-rem(50);
+      border-radius: 0 0 var(--border-radius-large) var(--border-radius-large);
+    }
+  }
+}

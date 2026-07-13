@@ -1,0 +1,14 @@
+{
+  "name": "positivus",
+  "version": "1.0.0",
+  "description": "Responsive digital marketing agency landing page built with HTML, SCSS and JavaScript.",
+  "scripts": {
+    "sass": "sass scss:css",
+    "sass:watch": "sass --watch scss:css"
+  },
+  "author": "Anastasia Semenova",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.101.0"
+  }
+}

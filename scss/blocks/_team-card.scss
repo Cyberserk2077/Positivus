@@ -1,0 +1,55 @@
+@use '../helpers' as *;
+
+.team-card {
+  height: 100%;
+  padding: to-rem(40) to-rem(35);
+  border-radius: var(--border-radius-large);
+  border: var(--border);
+  box-shadow: var(--shadow);
+
+  @include mobile {
+    padding-inline: to-rem(50);
+  }
+
+  &__header {
+    display: flex;
+  }
+
+  &__image {
+    &:not(:last-child) {
+      margin-right: to-rem(20);
+    }
+  }
+
+  &__info {
+    align-self: end;
+
+    &:not(:last-child) {
+      margin-right: to-rem(10);
+    }
+  }
+
+  &__name {
+    &:not(:last-child) {
+      margin-bottom: to-rem(3);
+    }
+  }
+
+  &__link {
+    @include flex-center;
+    @include square(to-rem(34));
+
+    flex-shrink: 0;
+    align-self: start;
+    margin-left: auto;
+    border-radius: 50%;
+    color: var(--color-accent);
+    background-color: var(--color-dark);
+  }
+
+  &__body {
+    padding-top: fluid(28, 20);
+    margin-top: fluid(28, 20);
+    border-top: var(--border);
+  }
+}

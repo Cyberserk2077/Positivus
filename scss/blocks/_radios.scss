@@ -1,0 +1,6 @@
+@use '../helpers' as *;
+
+.radios {
+  display: flex;
+  column-gap: to-rem(35);
+}

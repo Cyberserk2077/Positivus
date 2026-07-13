@@ -1,0 +1,25 @@
+@use '../helpers' as *;
+
+.subscribe-form {
+  display: flex;
+  align-items: center;
+  column-gap: to-rem(20);
+  width: 100%;
+  max-width: to-rem(634);
+  padding: to-rem(58) to-rem(40);
+  border-radius: var(--border-radius);
+  background-color: var(--color-dark-alt);
+
+  @include desktop {
+    flex-direction: column;
+    row-gap: to-rem(22);
+    width: 100%;
+    max-width: to-rem(450);
+    padding: to-rem(30);
+  }
+
+  &__field,
+  &__button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,60 @@
+@use '../helpers' as *;
+
+.review-card {
+  --reviewCardCornerWidth: #{to-rem(40)};
+  --reviewCardCornerOffsetLeft: #{to-rem(52)};
+
+  display: flex;
+  flex-direction: column;
+  row-gap: fluid(48, 44);
+
+  @include mobile {
+    --reviewCardCornerWidth: #{to-rem(32)};
+    --reviewCardCornerOffsetLeft: #{to-rem(46)};
+  }
+
+  &__body {
+    position: relative;
+    padding: to-rem(48) var(--reviewCardCornerOffsetLeft) to-rem(52);
+    border-radius: var(--border-radius-large);
+    border: to-rem(1) solid var(--color-accent);
+
+    @include mobile {
+      padding: to-rem(30);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: var(--reviewCardCornerOffsetLeft);
+
+      @include square(var(--reviewCardCornerWidth));
+
+      border: to-rem(1) solid var(--color-accent);
+      background-color: var(--color-dark);
+      transform: rotate(45deg);
+      translate: 0 -50%;
+      clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    padding-left: calc(
+      var(--reviewCardCornerOffsetLeft) +
+      var(--reviewCardCornerWidth) / 2
+    );
+    font-style: normal;
+  }
+
+  &__name,
+  &__company {
+    font-style: normal;
+  }
+
+  &__name {
+    color: var(--color-accent);
+  }
+}

@@ -1,0 +1,167 @@
+@use '../helpers' as *;
+
+.footer {
+
+  @include mobile {
+    padding-inline: 0;
+  }
+
+  &__inner {
+    padding: to-rem(55) to-rem(60) to-rem(55);
+    color: var(--color-light);
+    background-color: var(--color-dark);
+
+    @include mobile-above {
+      border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
+    }
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: to-rem(37);
+      padding: to-rem(50) var(--container-padding-x) to-rem(30);
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: to-rem(30);
+
+    @include tablet {
+      flex-direction: column;
+      align-items: center;
+      row-gap: to-rem(37);
+    }
+
+    @include mobile {
+      display: contents;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: to-rem(66);
+
+      @include mobile {
+        margin-bottom: to-rem(37);
+      }
+    }
+  }
+
+  &__menu {
+
+    &-list {
+      display: flex;
+      align-items: center;
+      gap: fluid(40, 15);
+
+      @include mobile {
+        flex-direction: column;
+      }
+    }
+
+    &-link {
+      display: inline-flex;
+      align-items: center;
+      height: to-rem(30);
+      text-decoration: underline;
+
+      @include hover {
+        color: var(--color-accent);
+      }
+
+      @include mobile {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__soc1als {
+
+    @include mobile {
+      order: 1;
+    }
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: fluid(50, 37);
+
+    @include mobile-above {
+      &:not(:last-child) {
+        margin-bottom: to-rem(50);
+        padding-bottom: to-rem(50);
+        border-bottom: to-rem(1) solid currentColor;
+      }
+
+    }
+
+    @include mobile {
+      flex-direction: column;
+    }
+
+    @include mobile-s {
+      width: 100%;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: to-rem(27);
+
+    @include mobile {
+      align-items: center;
+      row-gap: to-rem(37);
+      text-align: center;
+    }
+
+    &-title {
+      color: var(--color-dark);
+    }
+
+    &-body {
+
+      p {
+        --paragraphMarginBottom: #{to-rem(20)};
+
+        @include mobile {
+          --paragraphMarginBottom: #{to-rem(15)};
+        }
+      }
+
+      a {
+
+        @include hover {
+          color: var(--color-accent);
+        }
+      }
+    }
+  }
+
+  &__extra {
+    display: flex;
+    gap: fluid(40, 15);
+
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+      order: 2;
+      width: 100%;
+      padding-top: to-rem(37);
+      border-top: to-rem(1) solid var(--color-light);
+    }
+  }
+
+  &__privacy-policy-link {
+    text-decoration: underline;
+
+    @include hover {
+      color: var(--color-accent);
+    }
+  }
+}

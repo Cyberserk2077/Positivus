@@ -1,0 +1,27 @@
+@use '../helpers' as *;
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+  &__button {
+    @include flex-center;
+    @include square(to-rem(24));
+
+    color: var(--color-light);
+    border: none;
+    background-color: transparent;
+
+    @include hover {
+      color: var(--color-accent);
+    }
+
+    &.is-current {
+      color: var(--color-accent);
+    }
+  }
+}
+
+

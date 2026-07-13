@@ -1,0 +1,44 @@
+@use 'helpers' as *;
+
+:root {
+  --color-light: #FFFFFF;
+  --color-dark: #191A23;
+  --color-dark-alt: #292A32;
+  --color-accent: #B9FF66;
+  --color-gray: #F3F3F3;
+  --color-gray-alt: #898989;
+
+  --border: #{to-rem(1)} solid var(--color-dark);
+  --border-radius: #{to-rem(14)};
+  --border-radius-small: #{to-rem(7)};
+  --border-radius-large: #{to-rem(45)};
+
+  --shadow: 0 #{to-rem(5)} 0 0 var(--color-dark);
+  --shadow-light: 0 0 5px 2px var(--color-light);
+  --shadow-accent: 0 0 5px 2px var(--color-accent);
+  --overlay: linear-gradient(rgba(30, 30, 30, .9), #000 1810%);
+
+  --font-family-base: 'Space Grotesk', sans-serif;
+
+  --container-width: #{to-rem(1200)};
+  --container-padding-x: #{to-rem(20)};
+  --section-padding-y: #{to-rem(70)};
+  --input-height: #{to-rem(59)};
+  --button-height: #{to-rem(68)};
+
+  --transition-duration: 0.2s;
+
+  --layer-negative: -1;
+  --layer-0: 0;
+  --layer-1: 1;
+  --layer-2: 2;
+  --layer-3: 3;
+
+  @include desktop {
+    --section-padding-y: #{to-rem(50)};
+  }
+
+  @include mobile {
+    --section-padding-y: #{to-rem(30)};
+  }
+}

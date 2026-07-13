@@ -1,0 +1,11 @@
+@use '../helpers' as *;
+
+.puddle-bg {
+  padding-inline: to-rem(7);
+  border-radius: var(--border-radius-small);
+  background-color: var(--color-accent);
+
+  &--light {
+    background-color: var(--color-light);
+  }
+}

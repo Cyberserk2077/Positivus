@@ -1,0 +1,68 @@
+@use '../helpers' as *;
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  row-gap: fluid(110, 46);
+  padding-top: to-rem(84);
+  padding-bottom: to-rem(54);
+  border-radius: var(--border-radius-large);
+  color: var(--color-light);
+  background-color: var(--color-dark);
+  overflow-x: hidden;
+
+  @include tablet {
+    padding: to-rem(30) to-rem(30) to-rem(46);
+  }
+
+  &__slider {
+    width: 100%;
+    overflow: visible !important;
+
+    &-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    &-item {
+      display: flex;
+      justify-content: center;
+      height: auto;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: to-rem(40);
+    width: 100%;
+    max-width: fluid(564, 330);
+    margin-inline: auto;
+  }
+
+  &__arrow-button {
+    @include flex-center;
+    @include square(to-rem(48));
+
+    color: var(--color-light);
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    @include hover {
+      color: var(--color-accent);
+    }
+
+    .is-disabled {
+      color: var(--color-gray-alt);
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    svg {
+      @include square(to-rem(20));
+    }
+  }
+}

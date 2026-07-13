@@ -1,0 +1,29 @@
+@use '../helpers' as *;
+
+.section {
+  padding-block: var(--section-padding-y);
+
+  &__header {
+    display: flex;
+    align-items: center;
+    column-gap: to-rem(40);
+
+    &:not(:last-child) {
+      margin-bottom: fluid(80, 40);
+    }
+
+    @include mobile {
+      flex-direction: column;
+      row-gap: to-rem(30);
+      text-align: center;
+    }
+  }
+
+  &__description {
+    max-width: to-rem(580);
+  }
+
+  &--hidden-x {
+    overflow-x: hidden;
+  }
+}
