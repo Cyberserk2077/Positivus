@@ -4,51 +4,54 @@
   <meta charset="UTF-8">
   <meta
     name="viewport"
-    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    content="width=device-width, initial-scale=1.0"
   >
   <meta
     http-equiv="X-UA-Compatible"
     content="ie=edge"
   >
-  <title>Positivus</title>
+  <title>Positivus — Digital Marketing Agency</title>
+  <meta name="description" content="Explore Positivus, a responsive digital marketing agency portfolio demo featuring services, case studies and an interactive team.">
   <link rel="stylesheet" href="./css/main.css">
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
   />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" async data-js-swiper></script>
   <script src="./scripts/main.js" type="module"></script>
 </head>
-<body>
+<body id="top">
+<a class="skip-link" href="#main">Skip to content</a>
+<noscript><p class="demo-notice container">Interactive demos require JavaScript. All team members and reviews are shown below. Forms are disabled.</p></noscript>
 <header class="header" data-js-header>
   <div class="header__inner container">
-    <a class="header__logo logo" href="/">
+    <a class="header__logo logo" href="#top">
       <img
         class="logo__image"
         src="./images/logo.svg"
         alt="Positivus"
         width="220"
         height="36"
-        loading="lazy"
+        loading="eager"
       />
     </a>
-    <div class="header__overlay" data-js-header-overlay>
+    <div class="header__overlay" id="header-menu" data-js-header-overlay>
       <nav class="header__menu">
         <ul class="header__menu-list">
           <li class="header__menu-item">
-            <a class="header__menu-link" href="/">About us</a>
+            <a class="header__menu-link" href="#team">About us</a>
           </li>
           <li class="header__menu-item">
             <a class="header__menu-link" href="#services">Services</a>
           </li>
           <li class="header__menu-item">
-            <a class="header__menu-link" href="/">Use Cases</a>
+            <a class="header__menu-link" href="#case-studies">Use Cases</a>
           </li>
           <li class="header__menu-item">
-            <a class="header__menu-link" href="/">Pricing</a>
+            <a class="header__menu-link" href="#" data-demo-link title="Portfolio demo: destination not included" aria-description="Portfolio demo: destination not included">Pricing</a>
           </li>
           <li class="header__menu-item">
-            <a class="header__menu-link" href="/">Blog</a>
+            <a class="header__menu-link" href="#" data-demo-link title="Portfolio demo: destination not included" aria-description="Portfolio demo: destination not included">Blog</a>
           </li>
         </ul>
       </nav>
@@ -56,7 +59,7 @@
     <button
       class="header__button button button--transparent hidden-mobile"
       type="button"
-      data-js-modal-button="quote"
+      disabled data-js-modal-button="quote"
     >
       Request a quote
     </button>
@@ -64,7 +67,7 @@
       class="header__burger-button burger-button visible-mobile"
       type="button"
       aria-expanded="false"
-      aria-label="Открыть меню"
+      aria-label="Open menu" aria-controls="header-menu"
       data-js-header-burger-button
     >
       <span class="burger-button__line"></span>
@@ -73,7 +76,7 @@
     </button>
   </div>
 </header>
-<main class="main">
+<main class="main" id="main" tabindex="-1">
   <section class="section container section--hidden-x">
     <div class="section__body">
       <div class="hero">
@@ -86,7 +89,7 @@
             <button
               class="hero__button button"
               type="button"
-              data-js-modal-button="consultation"
+              disabled data-js-modal-button="consultation"
             >
               Book a consultation
             </button>
@@ -97,7 +100,7 @@
             alt=""
             width="600"
             height="515"
-            loading="lazy"
+            loading="eager" fetchpriority="high"
           />
         </div>
         <div class="hero__partners">
@@ -185,7 +188,7 @@
                   <span class="puddle-bg">Search engine</span>
                   <span class="puddle-bg">optimization</span>
                 </h3>
-                <a class="service-card__link" href="/">
+                <a class="service-card__link" href="#" data-demo-link title="Portfolio demo: destination not included" aria-description="Portfolio demo: destination not included">
                     <span class="service-card__link-icon-wrapper">
                       <svg
                         width="21"
@@ -220,7 +223,7 @@
                   <span class="puddle-bg puddle-bg--light">Pay-per-click</span>
                   <span class="puddle-bg puddle-bg--light">advertising</span>
                 </h3>
-                <a class="service-card__link" href="/">
+                <a class="service-card__link" href="#" data-demo-link title="Portfolio demo: destination not included" aria-description="Portfolio demo: destination not included">
                     <span class="service-card__link-icon-wrapper">
                       <svg
                         width="21"
@@ -257,8 +260,8 @@
                 </h3>
                 <a
                   class="service-card__link service-card__link--light"
-                  href="/"
-                >
+                  href="#"
+                 data-demo-link title="Portfolio demo: destination not included" aria-description="Portfolio demo: destination not included">
                     <span class="service-card__link-icon-wrapper">
                       <svg
                         width="21"
@@ -293,7 +296,7 @@
                   <span class="puddle-bg">Email</span>
                   <span class="puddle-bg">Marketing</span>
                 </h3>
-                <a class="service-card__link" href="/">
+                <a class="service-card__link" href="#" data-demo-link title="Portfolio demo: destination not included" aria-description="Portfolio demo: destination not included">
                     <span class="service-card__link-icon-wrapper">
                       <svg
                         width="21"
@@ -328,7 +331,7 @@
                   <span class="puddle-bg puddle-bg--light">Content</span>
                   <span class="puddle-bg puddle-bg--light">Creation</span>
                 </h3>
-                <a class="service-card__link" href="/">
+                <a class="service-card__link" href="#" data-demo-link title="Portfolio demo: destination not included" aria-description="Portfolio demo: destination not included">
                     <span class="service-card__link-icon-wrapper">
                       <svg
                         width="21"
@@ -365,8 +368,8 @@
                 </h3>
                 <a
                   class="service-card__link service-card__link--light"
-                  href="/"
-                >
+                  href="#"
+                 data-demo-link title="Portfolio demo: destination not included" aria-description="Portfolio demo: destination not included">
                     <span class="service-card__link-icon-wrapper">
                       <svg
                         width="21"
@@ -405,7 +408,7 @@
               <button
                 class="banner__button button"
                 type="button"
-                data-js-modal-button="quote"
+                disabled data-js-modal-button="quote"
               >Get your free proposal
               </button>
             </div>
@@ -422,7 +425,7 @@
       </div>
     </div>
   </section>
-  <section class="section container section--hidden-x">
+  <section class="section container section--hidden-x" id="case-studies">
     <header class="section__header">
       <h2 class="section__title puddle-bg">Case Studies</h2>
       <div class="section__description">
@@ -436,7 +439,7 @@
             <div class="studies__description">
               <p>For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in website traffic and a 25% increase in sales.</p>
             </div>
-            <a class="studies__link" href="/">
+            <a class="studies__link" href="#" data-demo-link title="Portfolio demo: destination not included" aria-description="Portfolio demo: destination not included">
               <span>Learn more</span>
               <svg
                 width="21"
@@ -456,7 +459,7 @@
             <div class="studies__description">
               <p>For a B2B software company, we developed an SEO strategy that resulted in a first page ranking for key keywords and a 200% increase in organic traffic.</p>
             </div>
-            <a class="studies__link" href="/">
+            <a class="studies__link" href="#" data-demo-link title="Portfolio demo: destination not included" aria-description="Portfolio demo: destination not included">
               <span>Learn more</span>
               <svg
                 width="21"
@@ -478,7 +481,7 @@
                 Learn more
               </p>
             </div>
-            <a class="studies__link" href="/">
+            <a class="studies__link" href="#" data-demo-link title="Portfolio demo: destination not included" aria-description="Portfolio demo: destination not included">
               <span>Learn more</span>
               <svg
                 width="21"
@@ -580,7 +583,7 @@
       </div>
     </div>
   </section>
-  <section class="section container">
+  <section class="section container" id="team">
     <header class="section__header">
       <h2 class="section__title puddle-bg">Team</h2>
       <div class="section__description">
@@ -589,7 +592,7 @@
     </header>
     <div class="section__body">
       <div class="team">
-        <ul class="team__list grid grid--3">
+        <ul class="team__list grid grid--3" id="team-list">
           <li class="team__item">
             <article class="team-card">
               <header class="team-card__header">
@@ -605,7 +608,7 @@
                   <h3 class="team-card__name h4">John Smith</h3>
                   <p class="team-card__post">CEO and Founder</p>
                 </div>
-                <a class="team-card__link" href="/" target="_blank">
+                <a class="team-card__link" href="#" target="_blank" data-demo-link title="Portfolio demo: destination not included" aria-description="Portfolio demo: destination not included">
                   <span class="visually-hidden">LinkedIn</span>
                   <svg
                     width="17"
@@ -649,7 +652,7 @@
                   <h3 class="team-card__name h4">Jane Doe</h3>
                   <p class="team-card__post">Director of Operations</p>
                 </div>
-                <a class="team-card__link" href="/" target="_blank">
+                <a class="team-card__link" href="#" target="_blank" data-demo-link title="Portfolio demo: destination not included" aria-description="Portfolio demo: destination not included">
                   <span class="visually-hidden">LinkedIn</span>
                   <svg
                     width="17"
@@ -693,7 +696,7 @@
                   <h3 class="team-card__name h4">Michael Brown</h3>
                   <p class="team-card__post">Senior SEO Specialist</p>
                 </div>
-                <a class="team-card__link" href="/" target="_blank">
+                <a class="team-card__link" href="#" target="_blank" data-demo-link title="Portfolio demo: destination not included" aria-description="Portfolio demo: destination not included">
                   <span class="visually-hidden">LinkedIn</span>
                   <svg
                     width="17"
@@ -737,7 +740,7 @@
                   <h3 class="team-card__name h4">Emily Johnson</h3>
                   <p class="team-card__post">PPC Manager</p>
                 </div>
-                <a class="team-card__link" href="/" target="_blank">
+                <a class="team-card__link" href="#" target="_blank" data-demo-link title="Portfolio demo: destination not included" aria-description="Portfolio demo: destination not included">
                   <span class="visually-hidden">LinkedIn</span>
                   <svg
                     width="17"
@@ -781,7 +784,7 @@
                   <h3 class="team-card__name h4">Brian Williams</h3>
                   <p class="team-card__post">Social Media Specialist</p>
                 </div>
-                <a class="team-card__link" href="/" target="_blank">
+                <a class="team-card__link" href="#" target="_blank" data-demo-link title="Portfolio demo: destination not included" aria-description="Portfolio demo: destination not included">
                   <span class="visually-hidden">LinkedIn</span>
                   <svg
                     width="17"
@@ -825,7 +828,7 @@
                   <h3 class="team-card__name h4">Sarah Kim</h3>
                   <p class="team-card__post">Content Creator</p>
                 </div>
-                <a class="team-card__link" href="/" target="_blank">
+                <a class="team-card__link" href="#" target="_blank" data-demo-link title="Portfolio demo: destination not included" aria-description="Portfolio demo: destination not included">
                   <span class="visually-hidden">LinkedIn</span>
                   <svg
                     width="17"
@@ -858,11 +861,11 @@
             </article>
           </li>
         </ul>
-        <button class="team__button button" type="button">See all team</button>
+        <button class="team__button button" data-js-team-button aria-controls="team-list" hidden type="button">See all team</button>
       </div>
     </div>
   </section>
-  <section class="section container">
+  <section class="section container" id="testimonials">
     <header class="section__header">
       <h2 class="section__title puddle-bg">Testimonials</h2>
       <div class="section__description">
@@ -934,7 +937,7 @@
           <button
             class="reviews__arrow-button"
             type="button"
-            data-js-reviews-slider-button-prev
+            aria-label="Previous review" data-js-reviews-slider-button-prev
           >
             <span class="visually-hidden">Previous slide</span>
             <svg
@@ -958,7 +961,7 @@
           <button
             class="reviews__arrow-button"
             type="button"
-            data-js-reviews-slider-button-next
+            aria-label="Next review" data-js-reviews-slider-button-next
           >
             <span class="visually-hidden">Next slide</span>
             <svg
@@ -978,7 +981,7 @@
       </div>
     </div>
   </section>
-  <section class="section container">
+  <section class="section container" id="contact">
     <header class="section__header">
       <h2 class="section__title puddle-bg">Contact Us</h2>
       <div class="section__description">
@@ -989,12 +992,15 @@
     </header>
     <div class="section__body">
       <div class="contact-us">
-        <form class="contact-us__form" action="/">
+        <form class="contact-us__form" data-js-demo-form aria-describedby="form-1-notice">
+          <p class="demo-notice" id="form-1-notice">Demo only. Your details are checked in this browser and are not sent or saved.</p>
           <fieldset class="contact-us__request-types radios">
             <legend class="radios__title visually-hidden">Request type</legend>
             <label class="radios__item radio">
               <input
                 class="radio__input visually-hidden"
+                disabled
+                data-js-form-field
                 type="radio"
                 name="request-type"
                 value="Say Hi"
@@ -1006,6 +1012,8 @@
             <label class="radios__item radio">
               <input
                 class="radio__input visually-hidden"
+                disabled
+                data-js-form-field
                 type="radio"
                 name="request-type"
                 value="Get a Quote"
@@ -1016,11 +1024,15 @@
           </fieldset>
           <div class="contact-us__body">
             <div class="contact-us__field field">
-              <label class="field__label" for="name">Name</label>
+              <label class="field__label" for="name">Name*</label>
               <input
                 class="field__input"
+                disabled
+                data-js-form-field
                 id="name"
                 name="name"
+                autocomplete="name"
+                required
                 placeholder="Name"
               >
             </div>
@@ -1028,8 +1040,11 @@
               <label class="field__label" for="email">Email*</label>
               <input
                 class="field__input"
+                disabled
+                data-js-form-field
                 id="email"
                 name="email"
+                autocomplete="email"
                 type="email"
                 placeholder="Email"
                 required
@@ -1039,6 +1054,8 @@
               <label class="field__label" for="message">Message*</label>
               <textarea
                 class="field__input field__input--textarea"
+                disabled
+                data-js-form-field
                 id="message"
                 name="message"
                 placeholder="Message"
@@ -1048,9 +1065,12 @@
           </div>
           <button
             class="contact-us__button button"
-            type="submit"
+            type="button"
+            disabled
+            data-js-submit
           >Send Message
           </button>
+          <p class="form-status" role="status" aria-live="polite" aria-atomic="true" data-js-form-status></p>
         </form>
       </div>
     </div>
@@ -1059,7 +1079,7 @@
 <footer class="footer container">
   <div class="footer__inner">
     <div class="footer__navigation">
-      <a class="footer__logo logo" href="/">
+      <a class="footer__logo logo" href="#top">
         <img
           class="logo__image"
           src="./images/logo-light.svg"
@@ -1072,26 +1092,26 @@
       <nav class="footer__menu">
         <ul class="footer__menu-list">
           <li class="footer__menu-item">
-            <a class="footer__menu-link" href="/">About us</a>
+            <a class="footer__menu-link" href="#team">About us</a>
           </li>
           <li class="footer__menu-item">
-            <a class="footer__menu-link" href="/">Services</a>
+            <a class="footer__menu-link" href="#services">Services</a>
           </li>
           <li class="footer__menu-item">
-            <a class="footer__menu-link" href="/">Use Cases</a>
+            <a class="footer__menu-link" href="#case-studies">Use Cases</a>
           </li>
           <li class="footer__menu-item">
-            <a class="footer__menu-link" href="/">Pricing</a>
+            <a class="footer__menu-link" href="#" data-demo-link title="Portfolio demo: destination not included" aria-description="Portfolio demo: destination not included">Pricing</a>
           </li>
           <li class="footer__menu-item">
-            <a class="footer__menu-link" href="/">Blog</a>
+            <a class="footer__menu-link" href="#" data-demo-link title="Portfolio demo: destination not included" aria-description="Portfolio demo: destination not included">Blog</a>
           </li>
         </ul>
       </nav>
       <div class="footer__soc1als soc1als">
         <ul class="soc1als__list">
           <li class="soc1als__item">
-            <a class="soc1als__link" href="/">
+            <a class="soc1als__link" href="#" data-demo-link title="Portfolio demo: destination not included" aria-description="Portfolio demo: destination not included">
               <span class="visually-hidden">LinkedIn</span>
               <svg
                 width="17"
@@ -1116,7 +1136,7 @@
             </a>
           </li>
           <li class="soc1als__item">
-            <a class="soc1als__link" href="/">
+            <a class="soc1als__link" href="#" data-demo-link title="Portfolio demo: destination not included" aria-description="Portfolio demo: destination not included">
               <span class="visually-hidden">Facebook</span>
               <svg
                 width="30"
@@ -1128,18 +1148,18 @@
               >
 
                 <g
-                  id="Page-1"
+
                   stroke="none"
                   stroke-width="1"
                   fill="none"
                   fill-rule="evenodd"
                 >
                   <g
-                    id="Dribbble-Light-Preview"
+
                     transform="translate(-385.000000, -7399.000000)"
                     fill="#000000"
                   >
-                    <g id="icons" transform="translate(56.000000, 160.000000)">
+                    <g transform="translate(56.000000, 160.000000)">
                       <path
                         d="M335.821282,7259 L335.821282,7250 L338.553693,7250 L339,7246 L335.821282,7246 L335.821282,7244.052 C335.821282,7243.022 335.847593,7242 337.286884,7242 L338.744689,7242 L338.744689,7239.14 C338.744689,7239.097 337.492497,7239 336.225687,7239 C333.580004,7239 331.923407,7240.657 331.923407,7243.7 L331.923407,7246 L329,7246 L329,7250 L331.923407,7250 L331.923407,7259 L335.821282,7259 Z"
                         id="facebook-[#176]"
@@ -1153,7 +1173,7 @@
             </a>
           </li>
           <li class="soc1als__item">
-            <a class="soc1als__link" href="/">
+            <a class="soc1als__link" href="#" data-demo-link title="Portfolio demo: destination not included" aria-description="Portfolio demo: destination not included">
               <span class="visually-hidden">Twitter</span>
               <svg
                 width="30"
@@ -1164,18 +1184,18 @@
                 xmlns:xlink="http://www.w3.org/1999/xlink"
               >
                 <g
-                  id="Page-1"
+
                   stroke="none"
                   stroke-width="1"
                   fill="none"
                   fill-rule="evenodd"
                 >
                   <g
-                    id="Dribbble-Light-Preview"
+
                     transform="translate(-60.000000, -7521.000000)"
                     fill="#000000"
                   >
-                    <g id="icons" transform="translate(56.000000, 160.000000)">
+                    <g transform="translate(56.000000, 160.000000)">
                       <path
                         d="M10.29,7377 C17.837,7377 21.965,7370.84365 21.965,7365.50546 C21.965,7365.33021 21.965,7365.15595 21.953,7364.98267 C22.756,7364.41163 23.449,7363.70276 24,7362.8915 C23.252,7363.21837 22.457,7363.433 21.644,7363.52751 C22.5,7363.02244 23.141,7362.2289 23.448,7361.2926 C22.642,7361.76321 21.761,7362.095 20.842,7362.27321 C19.288,7360.64674 16.689,7360.56798 15.036,7362.09796 C13.971,7363.08447 13.518,7364.55538 13.849,7365.95835 C10.55,7365.79492 7.476,7364.261 5.392,7361.73762 C4.303,7363.58363 4.86,7365.94457 6.663,7367.12996 C6.01,7367.11125 5.371,7366.93797 4.8,7366.62489 L4.8,7366.67608 C4.801,7368.5989 6.178,7370.2549 8.092,7370.63591 C7.488,7370.79836 6.854,7370.82199 6.24,7370.70483 C6.777,7372.35099 8.318,7373.47829 10.073,7373.51078 C8.62,7374.63513 6.825,7375.24554 4.977,7375.24358 C4.651,7375.24259 4.325,7375.22388 4,7375.18549 C5.877,7376.37088 8.06,7377 10.29,7376.99705"
                         id="twitter-[#154]"
@@ -1206,8 +1226,9 @@
           </p>
         </address>
       </div>
-      <form class="footer__subscribe-form subscribe-form">
-        <h2 class="visually-hidden">Subsciption</h2>
+      <form class="footer__subscribe-form subscribe-form" data-js-demo-form aria-describedby="form-2-notice">
+        <p class="demo-notice" id="form-2-notice">Demo only. Your details are checked in this browser and are not sent or saved.</p>
+        <h2 class="visually-hidden">Subscription</h2>
         <div class="subscribe-form__field field field--big-height field--dark-bg">
           <label
             class="field__label visually-hidden"
@@ -1216,8 +1237,11 @@
           </label>
           <input
             class="field__input"
+            disabled
+            data-js-form-field
             id="subscribe-email"
             name="email"
+            autocomplete="email"
             placeholder="Email"
             type="email"
             required
@@ -1225,9 +1249,12 @@
         </div>
         <button
           class="subscribe-form__button button button--accent"
-          type="submit"
+          type="button"
+          disabled
+          data-js-submit
         >Subscribe to news
         </button>
+        <p class="form-status" role="status" aria-live="polite" aria-atomic="true" data-js-form-status></p>
       </form>
     </div>
     <div class="footer__extra">
@@ -1235,17 +1262,17 @@
         <time datetime="2026">2026</time>
         Positivus. All Rights Reserved.
       </p>
-      <a class="footer__privacy-policy-link" href="/">Privacy Policy</a>
+      <a class="footer__privacy-policy-link" href="#" data-demo-link title="Portfolio demo: destination not included" aria-description="Portfolio demo: destination not included">Privacy Policy</a>
     </div>
   </div>
 </footer>
 <div class="modal" data-js-modal>
-  <div class="modal__window modal-buy" data-js-modal-window="quote">
+  <div class="modal__window modal-buy" data-js-modal-window="quote" role="dialog" aria-modal="true" aria-labelledby="quote-title" tabindex="-1">
     <button
       class="modal__close-button"
       type="button"
-      aria-label="Закрыть"
-      title="Закрыть"
+      aria-label="Close dialog"
+      title="Close dialog"
       data-js-modal-button-close
     >
       <svg width="24" height="24">
@@ -1256,45 +1283,61 @@
       </svg>
     </button>
     <div class="modal__content modal-buy__content">
-      <h3 class="modal-buy__title">Application form</h3>
-      <form class="modal-buy__form">
+      <h3 class="modal-buy__title" id="quote-title">Request a quote</h3>
+      <form class="modal-buy__form" data-js-demo-form aria-describedby="form-3-notice">
+        <p class="demo-notice" id="form-3-notice">Demo only. Your details are checked in this browser and are not sent or saved.</p>
         <label class="modal-buy__label">
+          <span class="modal-buy__label-text">Your name*</span>
           <input
             class="modal-buy__input"
+            disabled
+            data-js-form-field
             type="text"
             name="name"
+            autocomplete="name"
             placeholder="Your name"
             required
           />
         </label>
         <label class="modal-buy__label">
+          <span class="modal-buy__label-text">Phone number*</span>
           <input
             class="modal-buy__input"
+            disabled
+            data-js-form-field
             type="tel"
             name="phone"
+            autocomplete="tel"
+            pattern="[+0-9\(\) .\-]{7,25}"
+            title="Use 7–25 characters: digits, spaces, +, parentheses or hyphens."
             placeholder="Phone number"
             required
           />
         </label>
         <label class="modal-buy__label">
+          <span class="modal-buy__label-text">E-mail*</span>
           <input
             class="modal-buy__input"
+            disabled
+            data-js-form-field
             type="email"
             name="email"
+            autocomplete="email"
             placeholder="E-mail"
             required
           />
         </label>
-        <button class="modal-buy__submit" type="button">Send</button>
+        <button class="modal-buy__submit" type="button" disabled data-js-submit>Send</button>
+        <p class="form-status" role="status" aria-live="polite" aria-atomic="true" data-js-form-status></p>
       </form>
     </div>
   </div>
-  <div class="modal__window modal-buy" data-js-modal-window="consultation">
+  <div class="modal__window modal-buy" data-js-modal-window="consultation" role="dialog" aria-modal="true" aria-labelledby="consultation-title" tabindex="-1">
     <button
       class="modal__close-button"
       type="button"
-      aria-label="Закрыть"
-      title="Закрыть"
+      aria-label="Close dialog"
+      title="Close dialog"
       data-js-modal-button-close
     >
       <svg width="24" height="24">
@@ -1305,27 +1348,39 @@
       </svg>
     </button>
     <div class="modal__content modal-buy__content">
-      <h3 class="modal-buy__title">Application form</h3>
-      <form class="modal-buy__form">
+      <h3 class="modal-buy__title" id="consultation-title">Book a consultation</h3>
+      <form class="modal-buy__form" data-js-demo-form aria-describedby="form-4-notice">
+        <p class="demo-notice" id="form-4-notice">Demo only. Your details are checked in this browser and are not sent or saved.</p>
         <label class="modal-buy__label">
+          <span class="modal-buy__label-text">Your name*</span>
           <input
             class="modal-buy__input"
+            disabled
+            data-js-form-field
             type="text"
             name="name"
+            autocomplete="name"
             placeholder="Your name"
             required
           />
         </label>
         <label class="modal-buy__label">
+          <span class="modal-buy__label-text">Phone number*</span>
           <input
             class="modal-buy__input"
+            disabled
+            data-js-form-field
             type="tel"
             name="phone"
+            autocomplete="tel"
+            pattern="[+0-9\(\) .\-]{7,25}"
+            title="Use 7–25 characters: digits, spaces, +, parentheses or hyphens."
             placeholder="Phone number"
             required
           />
         </label>
-        <button class="modal-buy__submit" type="button">Send</button>
+        <button class="modal-buy__submit" type="button" disabled data-js-submit>Send</button>
+        <p class="form-status" role="status" aria-live="polite" aria-atomic="true" data-js-form-status></p>
       </form>
     </div>
   </div>

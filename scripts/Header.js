@@ -1,89 +1,45 @@
+import Overlay from './Overlay.js'
+
 class Header {
-  selectors = {
-    root: '[data-js-header]',
-    overlay: '[data-js-header-overlay]',
-    button: '[data-js-header-burger-button]',
-  }
-
-  stateClasses = {
-    isActive: 'is-active',
-    isLocked: 'is-locked',
-  }
-
   constructor() {
-    this.rootElement = document.querySelector(this.selectors.root)
-    this.overlayElement = this.rootElement.querySelector(this.selectors.overlay)
-    this.buttonElement = this.rootElement.querySelector(this.selectors.button)
-
-    this.bindEvents()
+    this.rootElement = document.querySelector('[data-js-header]')
+    if (!this.rootElement) return
+    this.overlayElement = this.rootElement.querySelector('[data-js-header-overlay]')
+    this.buttonElement = this.rootElement.querySelector('[data-js-header-burger-button]')
+    this.mobile = window.matchMedia('(max-width: 767.98px)')
+    this.background = [...document.querySelectorAll('main, footer, .header__logo, .header__button')]
+    this.buttonElement.addEventListener('click', () => this.setOpen(!this.isOpen))
+    this.overlayElement.addEventListener('click', (event) => {
+      if (event.target.closest('a') || event.target === this.overlayElement) this.setOpen(false)
+    })
+    document.addEventListener('keydown', (event) => {
+      if (!this.isOpen) return
+      if (event.key === 'Escape') this.setOpen(false)
+      Overlay.trap(event, [...Overlay.focusable(this.overlayElement), this.buttonElement], this.buttonElement)
+    })
+    document.addEventListener('overlay:open', () => this.setOpen(false, false))
+    this.mobile.addEventListener('change', () => this.setOpen(false))
+    this.setOpen(false, false)
   }
 
-  openMenu = () => {
-    this.overlayElement.classList.add(this.stateClasses.isActive)
-    this.buttonElement.classList.add(this.stateClasses.isActive)
-    document.documentElement.classList.add(this.stateClasses.isLocked)
-
-    this.buttonElement.setAttribute('aria-expanded', 'true')
-  }
-
-  closeMenu = () => {
-    this.overlayElement.classList.remove(this.stateClasses.isActive)
-    this.buttonElement.classList.remove(this.stateClasses.isActive)
-    document.documentElement.classList.remove(this.stateClasses.isLocked)
-
-    this.buttonElement.setAttribute('aria-expanded', 'false')
-  }
-
-  isMenuOpen = () => {
-    return this.overlayElement.classList.contains(this.stateClasses.isActive)
-  }
-
-  onOverlayClick = (event) => {
-    if (event.target === this.overlayElement) {
-      this.closeMenu()
+  setOpen(open, restore = true) {
+    const wasOpen = this.isOpen
+    this.isOpen = open && this.mobile.matches
+    this.overlayElement.inert = this.mobile.matches && !this.isOpen
+    this.overlayElement.classList.toggle('is-active', this.isOpen)
+    this.buttonElement.classList.toggle('is-active', this.isOpen)
+    this.buttonElement.setAttribute('aria-expanded', String(this.isOpen))
+    this.buttonElement.setAttribute('aria-label', this.isOpen ? 'Close menu' : 'Open menu')
+    if (wasOpen || this.isOpen) {
+      this.background.forEach((element) => { element.inert = this.isOpen })
     }
-  }
-
-  onButtonClick = () => {
-    const isActive = this.buttonElement.classList.contains(this.stateClasses.isActive)
-    isActive ? this.closeMenu() : this.openMenu()
-  }
-
-  onTouchStart = (event) => {
-    if (!this.isMenuOpen()) return
-    this.touchStartX = event.changedTouches[0].screenX
-    this.overlayElement.style.transition = 'none'
-  }
-
-  onTouchMove = (event) => {
-    if (!this.isMenuOpen()) return
-    const currentX = event.changedTouches[0].screenX
-    const translateX = Math.max(0, currentX - this.touchStartX)
-    this.overlayElement.style.translate = `${translateX}px`
-  }
-
-  onTouchEnd = (event) => {
-    if (!this.isMenuOpen()) return
-    const touchEndX = event.changedTouches[0].screenX
-    const swipeDistance = touchEndX - this.touchStartX
-
-    this.overlayElement.style.transition = ''
-    this.overlayElement.style.translate = ''
-
-    if (swipeDistance > 70) {
-      this.closeMenu()
+    Overlay.lock(this, this.isOpen)
+    if (this.isOpen) Overlay.focusable(this.overlayElement)[0]?.focus()
+    else if (wasOpen && restore) {
+      const target = this.mobile.matches ? this.buttonElement : Overlay.focusable(this.overlayElement)[0]
+      target?.focus()
     }
-  }
-
-  bindEvents() {
-    this.buttonElement.addEventListener('click', this.onButtonClick)
-    this.overlayElement.addEventListener('click', this.onOverlayClick)
-
-    this.overlayElement.addEventListener('touchstart', this.onTouchStart)
-    this.overlayElement.addEventListener('touchmove', this.onTouchMove)
-    this.overlayElement.addEventListener('touchend', this.onTouchEnd)
   }
 }
 
 export default Header
-
